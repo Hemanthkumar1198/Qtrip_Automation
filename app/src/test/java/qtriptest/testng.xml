@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Cases for QTrip">
+    <test name="Test Cases for QTrip Website">
+    <groups> 
+        <run>
+            <include name ="Login Flow"> </include >
+            <include name ="Search and Filter flow" Flow> </include >
+            <include name ="Booking and Cancellation Flow"> </include >
+            <include name ="Reliability Flow"> </include >
+        </run>
+     </groups>      
+        <classes>
+            <class name="qtriptest.tests.testCase_01" priority =1/>
+           
+            <class name="qtriptest.DP"/>
+        </classes>
+    </test>
+</suite>
