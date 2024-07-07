@@ -5,21 +5,11 @@ import qtriptest.DriverSingleton;
 import qtriptest.ExtentReportSingleton;
 import qtriptest.SeleniumWrapper;
 import qtriptest.pages.HomePage;
-import qtriptest.pages.LoginPage;
-import qtriptest.pages.RegisterPage;
 import java.net.MalformedURLException;
-import java.net.URL;
-import javax.lang.model.util.ElementScanner6;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import org.apache.logging.log4j.util.StringBuilders;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.WebDriver;
 // import org.testng.annotations.BeforeTest;
 // import org.testng.annotations.Test;
 // import org.testng.asserts.Assertion;
@@ -28,7 +18,7 @@ import org.testng.annotations.*;
 
 public class testCase_02 {
 
-    static RemoteWebDriver driver;
+    static WebDriver driver;
     static ExtentReports report;
     static ExtentTest test; 
     
@@ -43,7 +33,7 @@ public class testCase_02 {
     report = rpt2.getReport(); 
 
     DriverSingleton dsTestCase02 = DriverSingleton.getInstanceOfSingletonBrowserClass();
-    driver = dsTestCase02.geDriver();
+    driver = dsTestCase02.getDriver();
     logStatus("driver", "initializing driver", "Success");
     }
 

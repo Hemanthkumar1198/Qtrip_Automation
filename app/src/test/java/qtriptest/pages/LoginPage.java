@@ -1,8 +1,9 @@
 package qtriptest.pages;
 
 import qtriptest.SeleniumWrapper;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -11,7 +12,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 // import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
-    RemoteWebDriver driver;
+    WebDriver driver;
     @FindBy(name ="email")
     private WebElement emailAddressField;
     @FindBy(name ="password")
@@ -21,7 +22,7 @@ public class LoginPage {
     @FindBy(xpath = "//div[contains(@class, 'login register')]")
     private WebElement logoutButton;
 
-    public LoginPage(RemoteWebDriver driver){
+    public LoginPage(WebDriver driver){
         this.driver = driver;
         AjaxElementLocatorFactory ajaxFactory = new AjaxElementLocatorFactory(driver, 20);
         PageFactory.initElements(ajaxFactory, this);

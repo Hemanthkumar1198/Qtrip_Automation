@@ -1,18 +1,15 @@
 package qtriptest.pages;
 
 import qtriptest.SeleniumWrapper;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AdventurePage {
 
-    RemoteWebDriver driver;
+    WebDriver driver;
 
     @FindBy(id="search-adventures")
     private WebElement searchAdventureField;
@@ -21,7 +18,7 @@ public class AdventurePage {
     @FindBy(xpath="//div[@class='activity-card']//img[@class='img-responsive']/../div/div/h5")
     private WebElement adventureText;
     
-    public AdventurePage(RemoteWebDriver driver){
+    public AdventurePage(WebDriver driver){
         this.driver = driver;
         AjaxElementLocatorFactory ajaxFactory = new AjaxElementLocatorFactory(driver, 20);
         PageFactory.initElements(ajaxFactory, this); 

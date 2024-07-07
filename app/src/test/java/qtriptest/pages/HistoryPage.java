@@ -2,18 +2,17 @@
 package qtriptest.pages;
 
 import qtriptest.SeleniumWrapper;
-import java.util.ArrayList;
 import java.util.List;
-import javax.swing.InternalFrameFocusTraversalPolicy;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class HistoryPage {
     
-    RemoteWebDriver driver;
+    WebDriver driver;
     
     String tableData;
     @FindBy(xpath ="//a[text()='Reservations']")
@@ -30,7 +29,7 @@ public class HistoryPage {
     private WebElement noReserveMsg;
     
 
-    public HistoryPage(RemoteWebDriver driver){
+    public HistoryPage(WebDriver driver){
         this.driver = driver;
         AjaxElementLocatorFactory ajaxFactory = new AjaxElementLocatorFactory(driver, 10);
         PageFactory.initElements(ajaxFactory, this);

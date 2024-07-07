@@ -8,25 +8,17 @@ import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
 import java.net.MalformedURLException;
-import java.net.URL;
-import javax.naming.ldap.StartTlsRequest;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 import org.testng.Assert;
-import org.testng.annotations.*;
 
 public class testCase_01 {
 
-    static RemoteWebDriver driver;
+    static WebDriver driver;
     public static String lastGeneratedEmail;
     public static ExtentReports report;
     public static ExtentTest test;
@@ -43,7 +35,7 @@ public class testCase_01 {
         report = rpt1.getReport();
 
         DriverSingleton dsTestCase01 = DriverSingleton.getInstanceOfSingletonBrowserClass();
-        driver = dsTestCase01.geDriver();
+        driver = dsTestCase01.getDriver();
         logStatus("driver", "initializing driver", "Success");
     }
 

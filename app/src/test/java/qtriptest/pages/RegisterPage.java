@@ -2,23 +2,14 @@ package qtriptest.pages;
 
 import qtriptest.SeleniumWrapper;
 import java.util.UUID;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-// import org.openqa.selenium.support.ui.ExpectedCondition;
-// import org.openqa.selenium.support.ui.ExpectedConditions;
-// import org.openqa.selenium.support.ui.WebDriverWait;
-// import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RegisterPage {
-    RemoteWebDriver driver;
+    WebDriver driver;
     @FindBy(id ="floatingInput")
     private WebElement userNameField;
     @FindBy(name ="password")
@@ -30,7 +21,7 @@ public class RegisterPage {
     String emailAddress =" ";
     public String user_email =" "; 
     
-    public RegisterPage(RemoteWebDriver driver){
+    public RegisterPage(WebDriver driver){
         this.driver = driver;
         AjaxElementLocatorFactory ajaxFactory = new AjaxElementLocatorFactory(driver, 10);
         PageFactory.initElements(ajaxFactory, this);

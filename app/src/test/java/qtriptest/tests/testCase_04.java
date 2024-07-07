@@ -14,16 +14,16 @@ import java.net.MalformedURLException;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.remote.RemoteWebDriver;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class testCase_04 {
 
-    static RemoteWebDriver driver;
+    static WebDriver driver;
     static String lastGeneratedEmail;
     static ExtentReports report;
     static ExtentTest test;
@@ -40,7 +40,7 @@ public class testCase_04 {
         report = rpt4.getReport(); 
 
         DriverSingleton dsTestCase04 = DriverSingleton.getInstanceOfSingletonBrowserClass();
-        driver = dsTestCase04.geDriver();
+        driver = dsTestCase04.getDriver();
         logStatus("driver", "initializing driver", "Success");
     }
 

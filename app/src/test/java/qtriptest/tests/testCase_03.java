@@ -15,14 +15,15 @@ import java.net.MalformedURLException;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.remote.RemoteWebDriver;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class testCase_03 {
 
-    static RemoteWebDriver driver;
+    static WebDriver driver;
     static String lastGeneratedEmail;
     static ExtentReports report;
     static ExtentTest test; 
@@ -39,7 +40,7 @@ public class testCase_03 {
         report = rpt3.getReport();
 
         DriverSingleton dsTestCase03 = DriverSingleton.getInstanceOfSingletonBrowserClass();
-        driver = dsTestCase03.geDriver();
+        driver = dsTestCase03.getDriver();
         logStatus("driver", "initializing driver", "Success");
     }
 

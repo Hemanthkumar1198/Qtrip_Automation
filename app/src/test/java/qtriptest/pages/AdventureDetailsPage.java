@@ -1,15 +1,16 @@
 package qtriptest.pages;
 
 import qtriptest.SeleniumWrapper;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class AdventureDetailsPage {
 
-    RemoteWebDriver driver;
+    WebDriver driver;
     @FindBy(xpath = "//input[@name='name']")
     private WebElement guestNameField;
     @FindBy(xpath = "//input[@name='date']")
@@ -23,7 +24,7 @@ public class AdventureDetailsPage {
     @FindBy(xpath ="//div[@id='navbarNavDropdown']//ul//li//a[text()='Home']")
     private WebElement homeButton;
   
-    public AdventureDetailsPage(RemoteWebDriver driver){
+    public AdventureDetailsPage(WebDriver driver){
         this.driver = driver;
         AjaxElementLocatorFactory ajaxFactory = new AjaxElementLocatorFactory(driver, 20);
         PageFactory.initElements(ajaxFactory, this); 

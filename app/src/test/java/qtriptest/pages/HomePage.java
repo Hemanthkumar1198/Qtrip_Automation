@@ -2,23 +2,17 @@ package qtriptest.pages;
 
 import qtriptest.SeleniumWrapper;
 import java.util.List;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
     String url = "https://qtripdynamic-qa-frontend.vercel.app/";
-    RemoteWebDriver driver;
+    WebDriver driver;
 
     /* Page Factory desgn pattern */
     String city;
@@ -48,7 +42,7 @@ public class HomePage {
     private WebElement categoryClear;
 
     /* Constructor  to initialize the driver, webElements and wait for the webElements to locate */
-    public HomePage(RemoteWebDriver driver){
+    public HomePage(WebDriver driver){
         this.driver = driver;
         AjaxElementLocatorFactory ajaxFactory = new AjaxElementLocatorFactory(driver, 20);
         PageFactory.initElements(ajaxFactory, this); 
